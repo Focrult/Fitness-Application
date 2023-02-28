@@ -2,37 +2,35 @@
 
 ## Description
 
-### must fulfil the following requirements:
+The fitness tracker application is an easy-to-use for the user's fitness journey.
+It's secure and compatible with various mobile devices.
 
-- Use Node.js and Express.js to create a RESTful API.
+## Acceptance Creteria
 
-- Use Handlebars.js as the template engine.
-
-- Use MySQL and the Sequelize ORM for the database.
-
-- Have both GET and POST routes for retrieving and adding new data.
-
-- Use at least one new library, package, or technology that we haven’t discussed.
-
-- Have a folder structure that meets the MVC paradigm.
-
-- Include authentication (express-session and cookies).
-
-- Protect API keys and sensitive information with environment variables.
-
-- Be deployed using Heroku (with data).
-
-- Have a polished UI.
-
-- Be responsive.
-
-- Be interactive (i.e., accept and respond to user input).
-
-- Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
-- Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
+Given a fitness tracker application,
+When I visit the site
+Then I am prompted for either login or signup,
+When I click on the sign-up,
+Then I am prompted to enter my email, name and phone number
+When I click signup
+Then I am taken to the Dashboard where I must enter specific details + preferences - beginner, intermediate, advanced.
+When I finish entering the details
+Then I am given a customized 4 week and 12-week workout plan, graph showing my progress, recommended foods blog, workout trends, etc
+When I select navigation for workout plan,
+Then I am given a customized workout plan, with checkboxes for progress
+When I select navigation for the graph
+Then I shown a visual representation of my progress
+When I select navigation for foods,
+Then I shown a blog of recommended foods
+When I select the navigation for workout trends,
+Then I am prompted for the top ten workout trends.
 
 ## User Story
+
+As a fitness newbie, I want to use a fitness tracker app to help me get started with my fitness journey.
+The app creates a personalized fitness plan and guides me through beginner-friendly workouts like yoga and cardio.
+I can track my progress and set reminders. The app provides feedback on my workouts, including the number of workouts, time spent exercising, and calories burned.
+The fitness tracker app is an easy-to-use tool for my fitness journey. It's secure and compatible with various mobile devices.
 
 ## Installation
 
@@ -41,5 +39,9 @@
 ## Contribution
 
 ## Links
+
+- [The URL of the functional deployed application]()
+
+- [The URL of GitHub Repository](https://github.com/Focrult/Fitness-Application)
 
 ## License
