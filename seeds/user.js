@@ -1,6 +1,6 @@
 const { User } = require('../models');
 
-const userInfo = [
+const userInfo = [ //instead of json, try?
     {
     "user_id": 1,
       "username": "Elon Musk",
@@ -9,7 +9,7 @@ const userInfo = [
     },
     {
         "user_id": 2,
-      "username": "",
+      "username": "Aedan",
       "email": "mvp@gmail.com",
       "password": "ilikeice8002"
     },
