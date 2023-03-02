@@ -4,5 +4,3 @@ DROP DATABASE IF EXISTS fitness_db;
 -- Create the fitness_db database --
 CREATE DATABASE fitness_db;
 
--- Use fitness_db database --
-USE fitness_db;
