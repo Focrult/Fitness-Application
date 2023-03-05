@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 // Create a new user
-router.post('/', async (req, res) => {
+router.post('/',async (req, res) => {
     try {
       const newUser = await User.create({
         username: req.body.username,
@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
   router.post('/login', async (req, res) => {
     try {
       const userLogin = await User.findOne({
-        where: { username: req.body.username }
+        where: { email: req.body.email }
       });
   
       if (!userLogin) {
@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
         return;
       }
   
-      const validPassword = userLogin.checkPassword(req.body.password);
+      const validPassword = await userLogin.checkPassword(req.body.password);
   
       if (!validPassword) {
         res.status(400).json({ message: 'Incorrect password, please try again!' });
@@ -52,8 +52,10 @@ router.post('/', async (req, res) => {
   
       req.session.save(() => {
         req.session.user_id = userLogin.id;
-        req.session.username = userLogin.username;
+        req.session.email = userLogin.email;
         req.session.logged_in = true;
+
+        res.json('You are now logged in!');
       });
     } catch (err) {
       res.status(500).json(err);

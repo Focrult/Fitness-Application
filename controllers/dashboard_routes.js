@@ -4,34 +4,30 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const workoutData = await Workout.findAll({
-      where: {
-        user_id: req.session.user_id,
-      },
-      include: [
-        {
-          model: User,
-        },
-      ],
-    });
+    // const workoutData = await Workout.findAll({
+    //   where: {
+    //     user_id: req.session.user_id,
+    //   },
+    //   include: [
+    //     {
+    //       model: User,
+    //     },
+    //   ],
+    // });
 
     // Serialize data so the template can read it
     // const workouts = workoutData.map((workout) => workout.get({ plain: true }));
 
     //temp data until we done seeds data
-    const Workout= [
-                        {
-                            workout_name:"Push jark",
-                            difficulty_level:"hard" 
-                        },
-                        {
-                            workout_name:"running",
-                            difficulty_level:"medium" 
-                        },
-                    ];
+    const workoutData= {
+                          workout_name:"running",
+                          difficulty_level:"hard" 
+                       };
+          
 
     // Pass serialized data and session flag into template
-    res.render('dashboard', { 
+    res.render('workout', { 
+      layout: "dashboard",
       workoutData, 
       logged_in: req.session.logged_in 
     });

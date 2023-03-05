@@ -3,7 +3,7 @@ const { User } = require('../models');
 const userInfo = [ //instead of json, try?
     {
       "email": "Elon@123.com",
-      "password": "password123"
+      "password": "password123rrr"
     },
     {
       "email": "Jeff@yahoo.com",
@@ -23,7 +23,10 @@ const userInfo = [ //instead of json, try?
     }
   ];
 
-  const seedUsers = () => User.bulkCreate(userInfo);
+  const seedUsers = () => User.bulkCreate(userInfo, {
+    individualHooks: true,
+    returning: true,
+  });
   module.exports = seedUsers;
 
 
