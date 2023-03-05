@@ -11,13 +11,6 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middlewares
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(express.static("./public/login.js"));
-app.use(express.static("./public/logout.js"));
-app.use(express.static("./utils/helper.js"));
-
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
@@ -42,6 +35,7 @@ app.use(session(sess));
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
+// Middlewares Added here
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
