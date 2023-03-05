@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User,  } = require('../../models');
+const { User} = require('../../models');
 
 // Get all users
 router.get('/', async (req, res) => {
@@ -70,3 +70,4 @@ router.post('/', async (req, res) => {
       res.status(404).end();
     }
   });
+  module.exports = router;

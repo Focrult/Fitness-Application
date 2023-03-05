@@ -2,23 +2,23 @@ const { User } = require('../models');
 
 const userInfo = [ //instead of json, try?
     {
-      "username": "Elon Musk",
+      "email": "Elon@123.com",
       "password": "password123"
     },
     {
-      "username": "Jeff Bezos",
+      "email": "Jeff@yahoo.com",
       "password": "ilikeice8002"
     },
     {
-      "username": "RM",
+      "email": "rm@gmail.com",
       "password": "showmewhatyougot"
     },
     {
-      "username": "megaMind",
+      "email": "megaMind@hotmail.com",
       "password": "Presentation!"
     },
     {
-      "username": "Rosh",
+      "email": "Rosh",
       "password": "WOD>BFA+SL"
     }
   ];
