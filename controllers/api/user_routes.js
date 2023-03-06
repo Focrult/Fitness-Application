@@ -28,22 +28,6 @@ router.post('/',async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
-
-// User sign up
-router.get('/signup', (req, res) => {
-
-  res.render('signup');
-});
-
 // User login
 router.post('/login', async (req, res) => {
   try {
