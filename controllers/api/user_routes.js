@@ -14,22 +14,19 @@ router.get('/', async (req, res) => {
 
 // Create a new user
 router.post('/',async (req, res) => {
-    try {
-      const newUser = await User.create({
-        username: req.body.username,
-        password: req.body.password
-      });
-  
-      req.session.save(() => {
-        req.session.user_id = newUser.id;
-        req.session.username = newUser.username;
-        req.session.logged_in = true;
-        res.json(newUser);
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
   
   // User login
   router.post('/login', async (req, res) => {
