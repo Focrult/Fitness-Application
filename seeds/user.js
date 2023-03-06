@@ -1,24 +1,29 @@
 const { User } = require('../models');
 
-const userInfo = [ //instead of json, try?
+const userInfo = [
     {
-      "email": "Elon@123.com",
-      "password": "password123rrr"
+      "username": "Elon Musk",
+      "email": "example@gmail.com",
+      "password": "password123"
     },
     {
-      "email": "Jeff@yahoo.com",
+      "username": "mvp",
+      "email": "mvp@gmail.com",
       "password": "ilikeice8002"
     },
     {
-      "email": "rm@gmail.com",
-      "password": "showmewhatyougot"
+      "username": "Uther",
+      "email": "lightbringer@storm.com",
+      "password": "dontdisthelight2002"
     },
     {
-      "email": "megaMind@hotmail.com",
+      "username": "mega",
+      "email": "mind@metro.com",
       "password": "Presentation!"
     },
     {
-      "email": "Rosh",
+      "username": "Rosh",
+      "email": "WOD@okay.com",
       "password": "WOD>BFA+SL"
     }
   ];
@@ -27,6 +32,7 @@ const userInfo = [ //instead of json, try?
     individualHooks: true,
     returning: true,
   });
+
   module.exports = seedUsers;
 
 
