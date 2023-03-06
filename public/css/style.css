@@ -1,0 +1,32 @@
+body {
+    background-image: url("/public/img/background.jpg");
+}
+
+#header{
+    margin:10px;
+}
+
+.container{
+    margin:10%;
+}
+
+.header-container{
+    margin:10px;
+}
+
+#signup-section{
+    margin-top:5%;
+    text-align: center;
+}
+
+#logout{
+    margin-left: 95%;
+}
+
+nav>a{
+    margin-top:30%;
+    color: black;
+    padding: 15px 25px;
+    text-decoration: none;
+}
+
