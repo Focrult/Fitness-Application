@@ -9,24 +9,26 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="header-container">
       <header class="row">
-        <h1 class="col-lg-10">
-          Fitness Application 
-        </h1>
+        <div class="col-lg-9">
+          <h1 >Fitness Application</h1>
+        </div>
+        <div class="col-lg-2 logout-btn">
         {{#if logged_in}}
-        <button class="no-button justify-content-end col-lg-2" id="logout">logout</button>
+        <button type="submit" class="btn btn-primary" id="logout">Logout</button>
         {{/if}} 
+        </div>
       </header>
 
-      <main class="row ">
+      <main class="row">
         <nav class="nav flex-column col-lg-2">
           <a href="/account">Account</a> 
           <a href="/workout">Workout</a> 
           <a href="/matrix">Matrix</a> 
         </nav>
 
-        <section class="col-lg-10"> 
+        <section class="col-lg-8"> 
         <!-- Render the sub layout -->
         {{{body}}}
         </section>
