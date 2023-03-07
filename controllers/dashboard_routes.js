@@ -52,4 +52,12 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/matrix', (req, res) => {
+ 
+  res.render('chart', { 
+    layout: "dashboard",
+    logged_in: req.session.logged_in 
+  });
+});
+
 module.exports = router;

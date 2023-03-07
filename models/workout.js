@@ -19,9 +19,9 @@ const Workout = sequelize.define('Workout', {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    completedExercises: {
-      type: DataTypes.JSONB,
-      defaultValue: {}
+    completed: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true
     }
   });
   
