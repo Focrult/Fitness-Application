@@ -2,34 +2,50 @@ const { Account } = require("../models");
 
 const accountInfo = [
   {
-    accountname: "Elon Musk",
-    email: "example@gmail.com",
-    password: "password123",
+    accountname: "Tom Team",
+    age: "19",
+    gender: "male",
+    height: "165cm",
+    weight: "170kg",
+    email: "tom@gmail.com",
+    preference: "swimminng, running, lifting",
   },
   {
-    accountname: "mvp",
-    email: "mvp@gmail.com",
-    password: "ilikeice8002",
+    accountname: "Luke Bake",
+    gender: "male",
+    height: "169cm",
+    weight: "180kg",
+    email: "luke@gmail.com",
+    preference: "swimminng, running, lifting",
   },
   {
-    accountname: "Uther",
-    email: "lightbringer@storm.com",
-    password: "dontdisthelight2002",
+    accountname: "Rachel Barbar",
+    gender: "female",
+    height: "150cm",
+    weight: "160kg",
+    email: "rachel@gmail.com",
+    preference: "swimminng, running, lifting",
   },
   {
-    accountname: "mega",
-    email: "mind@metro.com",
-    password: "Presentation!",
+    accountname: "Mega Rosh",
+    gender: "female",
+    height: "160cm",
+    weight: "155kg",
+    email: "mega@gmail.com",
+    preference: "swimminng, running, lifting",
   },
   {
-    accountname: "Rosh",
-    email: "WOD@okay.com",
-    password: "WOD>BFA+SL",
+    accountname: "John Paul",
+    gender: "male",
+    height: "170cm",
+    weight: "180kg",
+    email: "john@gmail.com",
+    preference: "swimminng, running, lifting",
   },
 ];
 
 const seedAccounts = () =>
-  account.bulkCreate(accountInfo, {
+  Account.bulkCreate(accountInfo, {
     individualHooks: true,
     returning: true,
   });
