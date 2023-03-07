@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+
 class User extends Model {
   async checkPassword(loginPw) {
     return await bcrypt.compare(loginPw, this.password);
@@ -25,6 +26,26 @@ User.init({
   password: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  dateOfBirth: {
+    type: DataTypes.DATEONLY,
+    allowNull: true,
+  },
+  height: {
+    type: DataTypes.DECIMAL(5, 2),
+    allowNull: true,
+  },
+  weight: {
+    type: DataTypes.DECIMAL(5, 2),
+    allowNull: true,
+  },
+  preference: {
+    type: DataTypes.ENUM('weight lifting', 'running', 'swimming', 'yoga'),
+    allowNull: true,
+  },
+  exerciseActivity: {
+    type: DataTypes.ENUM('Sedentary', 'Lightly Active', 'Moderately Active', 'Very Active'),
+    allowNull: true,
   },
 }, 
 {
