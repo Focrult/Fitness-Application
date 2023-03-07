@@ -1,5 +1,6 @@
 body {
-    background-image: url("/public/img/background.jpg");
+    background-image: url('../img/background.jpg');
+    background-size: 2000px;
 }
 
 #header{
@@ -23,10 +24,16 @@ body {
     margin-left: 95%;
 }
 
+nav{
+    background-image: url('../img/background.jpg');
+    padding-bottom: 30%;
+}
+
 nav>a{
     margin-top:30%;
     color: black;
-    padding: 15px 25px;
+    padding: 35px 25px;
     text-decoration: none;
+    /* background-image: url('../img/'); */
 }
 
