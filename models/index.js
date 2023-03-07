@@ -1,6 +1,11 @@
-const User = require('./User');
+const User = require("./User");
+const Workout = require("./Workout");
 
-User.hasMany
+// Define associations
+User.hasMany(Workout, { onDelete: "cascade" });
+Workout.belongsTo(User);
 
-
-module.exports = { User};
+module.exports = {
+  User,
+  Workout,
+};
