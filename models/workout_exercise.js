@@ -13,7 +13,7 @@ WorkoutExercise.init(
     },
     exercise_time: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false,
     },
     exercise_id: {
       type: DataTypes.INTEGER,
