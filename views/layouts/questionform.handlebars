@@ -1,0 +1,24 @@
+<form action="/" method="post">
+  {{#each questions}}   <!-- block iterates over each question in the questions array -->
+  {{#if (or (eq name "gender") (eq name "height") (eq name "weight"))}} 
+  <!--  block checks whether the current question has a name property of "gender", "height", or "weight". 
+  If it does, the question will be rendered; otherwise, it will be skipped. -->
+  <div class="form-group">
+    <label for="{{name}}">{{question}}</label>
+    {{#if (eq type "radio")}}
+    {{#each options}}
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="{{name}}" id="{{value}}" value="{{value}}"{{#if required}} required{{/if}}>  <!-- block adds the required attribute to the input element if the question is marked as required in the fitnessQuestions array -->
+      <label class="form-check-label" for="{{value}}">{{label}}</label>
+    </div>
+    {{/each}}
+    {{else}}
+    <input class="form-control" type="{{type}}" id="{{name}}" name="{{name}}" placeholder="{{placeholder}}"{{#if required}} required{{/if}}>
+    {{/if}}
+  </div>
+  {{/if}}
+  {{/each}}
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<script src="./js/question.js"
