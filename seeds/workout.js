@@ -2,18 +2,21 @@ const { Workout } = require('../models');
 
 const workoutData = [
   {
-    name: 'Leg day',
-    description: 'Squats, lunges, leg press',
-    duration: 60,
-    completed: false,
+    "complete_date": "2/2/23",
+    "user_id": 1
   },
   {
-    name: 'Chest and triceps',
-    description: 'Bench press, push-ups, dips',
-    duration: 45,
-    completed: true,
+    "complete_date": "5/2/23",
+    "user_id": 2
   },
-  // Add more workout data as needed, make changes to suit preferences e.g swimming and running
+  {
+    "complete_date": "6/2/23",
+    "user_id": 1
+  },
+  {
+    "complete_date": "8/2/23",
+    "user_id": 2
+  },
 ];
 
 const seedWorkouts = () => Workout.bulkCreate(workoutData);

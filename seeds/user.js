@@ -8,7 +8,6 @@ const userInfo = [
     "gender": "male",
     "height": 185,
     "weight": 110,
-    // "preference": "swimming, running, weight lifting"
   },
   {
     "username": "Luke Bake",
@@ -17,7 +16,6 @@ const userInfo = [
     "gender": "male",
     "height": 178,
     "weight": 100,
-    // "preference": "swimming, running, weight lifting"
   },
   {
     "username": "Rachel Barbar",
@@ -26,7 +24,6 @@ const userInfo = [
     "gender": "female",
     "height": 160,
     "weight": 70,
-    // "preference": "swimming, running, weight lifting"
   },
   {
     "username": "Mega Rosh",
@@ -35,7 +32,6 @@ const userInfo = [
     "gender": "female",
     "height": 165,
     "weight": 60,
-    // "preference": "swimming, running, weight lifting"
   }
 ];
 
