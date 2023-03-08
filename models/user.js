@@ -15,6 +15,10 @@ User.init({
     primaryKey: true,
     autoIncrement: true
   },
+  username: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -27,16 +31,16 @@ User.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
-  dateOfBirth: {
-    type: DataTypes.DATEONLY,
+  gender: {
+    type: DataTypes.STRING,
     allowNull: true,
   },
   height: {
-    type: DataTypes.DECIMAL(5, 2),
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
   weight: {
-    type: DataTypes.DECIMAL(5, 2),
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
   preference: {
