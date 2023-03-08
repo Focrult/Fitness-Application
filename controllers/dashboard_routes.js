@@ -52,6 +52,23 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/account', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id);
+
+    const accountData = userData.get({ plain: true });
+
+
+    res.render('account', { 
+      layout: "dashboard",
+      ...accountData,
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/matrix', (req, res) => {
  
   res.render('chart', { 

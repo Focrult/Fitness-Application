@@ -1,3 +1,4 @@
+if(document.getElementById('myChart')){
 let myChart = document.getElementById('myChart').getContext('2d');
 
 let chart = new Chart(myChart, {
@@ -21,7 +22,7 @@ let chart = new Chart(myChart, {
     },
     options: {},
 });
-
+}
 
 
 
