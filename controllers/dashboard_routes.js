@@ -113,7 +113,7 @@ router.get('/account', withAuth, async (req, res) => {
   }
 });
 
-router.get('/matrix', (req, res) => {
+router.get('/matrix', withAuth, (req, res) => {
  
   res.render('chart', { 
     layout: "dashboard",
@@ -121,4 +121,20 @@ router.get('/matrix', (req, res) => {
   });
 });
 
+router.get('/exercise', withAuth, async(req, res) => {
+ 
+  try {
+    const exerciseData = await Exercise.findAll();
+
+    const exercises = exerciseData.map((exercise) => exercise.get({ plain: true }));
+
+    res.render('trackActivity', { 
+      layout: "main",
+      exercises: exercises ,
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
