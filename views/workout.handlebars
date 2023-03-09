@@ -1,15 +1,19 @@
 <section class="col-lg-10"> 
-  <div class="container">
-  <div class="row">
-    <h2>Day 1</h2>
-    <h3>{{workoutData.workout_name}}</h3> 
-  </div>
-  <div class="row">Day 2</div>
-  <div class="row">Day 3</div>
-  <div class="row">Day 4</div>
-  <div class="row">Day 5</div>
-  <div class="row">Day 6</div>
-  <div class="row">Day 7</div>
+  <div class="workout-list">
+  {{#if workouts.length }}
+    {{#each workouts as |workout|}}
+    <h2>{{format_date complete_date}}</h2>
+    <p>You have completed the following exercise: {{exercise_name}}.</p>
+    <p>Total exercise time: {{exercise_time}} mins</p>
+    {{/each}}
+  {{else}}
+    <p>You haven't done any workout. Press track activity to start!</p>
+  {{/if}}
+</div>
+
+<button class="track-activity" type="submit" value="Submit">
+  Track activity
+</button>
   </div>
 </section>
 

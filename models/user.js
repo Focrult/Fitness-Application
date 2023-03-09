@@ -43,14 +43,6 @@ User.init({
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  preference: {
-    type: DataTypes.ENUM('weight lifting', 'running', 'swimming', 'yoga'),
-    allowNull: true,
-  },
-  exerciseActivity: {
-    type: DataTypes.ENUM('Sedentary', 'Lightly Active', 'Moderately Active', 'Very Active'),
-    allowNull: true,
-  },
 }, 
 {
   hooks: {
