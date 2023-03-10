@@ -1,15 +1,15 @@
-const trackActivity = async (e) => {
+const trackActivity = async (event) => {
   console.log('testing  click');
-  e.preventDefault();
-  const Data = document.querySelector('submit').value.trim();
+  event.preventDefault();
+
+  const exercise = document.querySelector('exercise-name').value.trim();
+
+
   const response = await fetch('/api/exercises',{
     method: 'POST',
     body: JSON.stringify({title,text}),
     headers: {'Content-Type': 'application/json'}
   });
-
-
-
 
   if(response.okay){
     document.location.replace('exercisesAll');
@@ -21,34 +21,30 @@ const trackActivity = async (e) => {
 document.querySelector('.track-activity')
 .addEventListener('submit', trackActivity);
 
-
-
-
-
-
-// const trackActivityHandler = async (event) => {
+//example
+// const newFormHandler = async (event) => {
 //     event.preventDefault();
   
-//     const title = document.querySelector('#post-title').value.trim();
-//     const contents = document.querySelector('#post-content').value.trim();
+//     const exerciseName = document.querySelector('#exercise-name').value.trim();
+//     const exerciseTime = document.querySelector('#exercise_time').value.trim();
  
-//     if (title && contents) {
-//       const response = await fetch(`/api/post`, {
+//     if (exerciseName && exerciseTime) {
+//       const response = await fetch(`/api/exercise`, {
 //         method: 'POST',
-//         body: JSON.stringify({ title, contents }),
+//         body: JSON.stringify({ exerciseName, exerciseTime }),
 //         headers: {
 //           'Content-Type': 'application/json',
 //         },
 //       });
   
 //       if (response.ok) {
-//         document.location.replace('/homepage');
+//         document.location.replace('/workout');
 //       } else {
-//         alert('Failed to create post');
+//         alert('Failed to track activity');
 //       }
 //     }
 //   };
   
 //   document
-//     .querySelector('.new-post-form')
-//     .addEventListener('submit', trackActivity);
+//     .querySelector('.track-exercise-form')
+//     .addEventListener('submit', newFormHandler);
