@@ -1,18 +1,26 @@
-const chartData = JSON.parse('{{chartData}}');
+const ChartData = async () => {
+    const response = await fetch('/api/matrix/chart');
+    const data = await response.json();
+    const chart = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(chart, {
+      type: 'bar',
+      data: data,
+      options: {}
+    });
+  };
+  ChartData();
 
-let myChart = document.getElementById('myChart').getContext('2d');
 
-let chart = new Chart(myChart, {
-  type: 'bar', //bar horizontal, pie, line, donut, radar and polarArea
-  data: {
-    labels: chartData.labels,
-    datasets: [{
-      label: 'Activities Completed',
-      data: chartData.datasets[0].data,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgba(255, 99, 132, 1)',
-      borderWidth: 1
-    }]
-  },
-  options: {},
-});
+  const trendData = async () => {
+    const response = await fetch('/api/matrix/trends');
+    const data = await response.json();
+    const popularWorkoutsList = document.getElementById('trendingList');
+  
+    popularWorkoutsList.innerHTML = '';
+    data.forEach(workout => {
+      const li = document.createElement('li');
+      li.textContent = `${workout.exercise_name} - ${workout.workouts} (${workout.count})`;
+      popularWorkoutsList.appendChild(li);
+    });
+  }
+  // trendData(); Error - Review after chart completion

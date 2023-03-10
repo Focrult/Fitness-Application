@@ -114,7 +114,7 @@ router.get('/account', withAuth, async (req, res) => {
 });
 
 router.get('/matrix', (req, res) => {
- 
+ console.log("test");
   res.render('chart', { 
     layout: "dashboard",
     logged_in: req.session.logged_in 
