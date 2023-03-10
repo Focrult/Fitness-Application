@@ -1,14 +1,12 @@
-<form action="/" method="post">
-  {{#each questions}}   <!-- block iterates over each question in the questions array -->
-  {{#if (or (eq name "gender") (eq name "height") (eq name "weight"))}} 
-  <!--  block checks whether the current question has a name property of "gender", "height", or "weight". 
-  If it does, the question will be rendered; otherwise, it will be skipped. -->
+<form id="fitness-form">
+  {{#each questions}}
+  {{#if (or (eq name "gender") (eq name "height") (eq name "weight"))}}
   <div class="form-group">
     <label for="{{name}}">{{question}}</label>
     {{#if (eq type "radio")}}
     {{#each options}}
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="{{name}}" id="{{value}}" value="{{value}}"{{#if required}} required{{/if}}>  <!-- block adds the required attribute to the input element if the question is marked as required in the fitnessQuestions array -->
+      <input class="form-check-input" type="radio" name="{{name}}" id="{{value}}" value="{{value}}"{{#if required}} required{{/if}}>
       <label class="form-check-label" for="{{value}}">{{label}}</label>
     </div>
     {{/each}}
@@ -18,7 +16,32 @@
   </div>
   {{/if}}
   {{/each}}
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button id="submit-btn" type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <script src="./js/question.js"></script>
+
+<script>
+  const form = document.getElementById("fitness-form");
+  const submitBtn = document.getElementById("submit-btn");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // prevent the form from submitting normally
+
+    // create an object to store the form data
+    const formData = {};
+    const elements = e.target.elements;
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+      if (element.type !== "submit") {
+        formData[element.name] = element.value;
+      }
+    }
+
+    // save the form data in local storage
+    localStorage.setItem("formData", JSON.stringify(formData));
+
+    // redirect to the workout page
+    window.location.href = "./views/partials/workout.handlebars";
+  });
+</script>
