@@ -17,6 +17,7 @@ router.get('/', withAuth, async (req, res) => {
 
     // Serialize data so the template can read it
     const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+   
     workouts.forEach(workout => {
       workout.exercise_name = '';
       workout.exercise_time = 0;
