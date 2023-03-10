@@ -1,16 +1,16 @@
 const fitnessQuestions = [
     {
-      question: "What is your current weight in pounds?",
+      question: "What is your current weight in kilograms?",
       type: "number",
       name: "weight",
-      placeholder: "Enter your weight in pounds",
+      placeholder: "Enter your weight in kilograms",
       required: true
     },
     {
-      question: "What is your current height in inches?",
+      question: "What is your current height in centimeters?",
       type: "number",
       name: "height",
-      placeholder: "Enter your height in inches",
+      placeholder: "Enter your height in centimeters",
       required: true
     },
     {
