@@ -9,16 +9,15 @@
       <div class="card">
         <div class="card-header underline">Top 3 Workouts of the Week!</div>
         <div class="card-body">
-          <ul>
-            {{#each popularWorkouts}}
-              <li>{{this.workoutName}} ({{this.count}})</li>
-            {{/each}}
-          </ul>
+      <ul id="trendingList">
+          {{#each trendingList}}
+            <li>{{this.exercise_name}} ({{this.count}})</li>
+          {{/each}}
+      </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="./js/chart.js"></script>
+<script src="/js/chart.js"></script>

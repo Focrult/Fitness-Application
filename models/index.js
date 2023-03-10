@@ -21,6 +21,7 @@ Workout.belongsToMany(Exercise, {
   through: {model: WorkoutExercise},
 });
 
+
 module.exports = {
   User,
   Workout,
