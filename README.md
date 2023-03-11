@@ -59,6 +59,7 @@ The fitness tracker app is an easy-to-use tool for my fitness journey. It's secu
 - [The URL of GitHub Repository](https://github.com/Focrult/Fitness-Application)
 
 - [Webe page appearance](./Assets/Front%20Page.png)
+- [Background](./Assets/background.jpg)
 
 ## License
 
