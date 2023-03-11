@@ -127,7 +127,7 @@ router.get('/exercise', withAuth, async(req, res) => {
     const exercises = exerciseData.map((exercise) => exercise.get({ plain: true }));
 
     res.render('trackActivity', { 
-      layout: "main",
+      layout: "dashboard",
       exercises: exercises ,
       logged_in: req.session.logged_in 
     });
