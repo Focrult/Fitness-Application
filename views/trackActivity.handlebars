@@ -1,16 +1,19 @@
 <h1>Track your Activity</h1>
-<div class="row track-exercise-form">
-  {{#each exercises as |exercise|}}
-  <div class="col-md-6 mb-3">
-    <label for="exampleFormControlInput1" class="form-label" id="{{exercise.id}}">{{exercise.exercise_name}}</label>
-    <input type="number" class="form-control" id="exercise_time" placeholder="Enter time you spend on this exercise in minutes">
+<form id="exercise_form" class="track-activity-form">
+  <div class="row">
+    {{#each exercises as |exercise|}}
+    <div class="col-md-6 mb-3">
+      <label for="exampleFormControlInput1" class="form-label">{{exercise.exercise_name}}</label>
+      <input type="number" class="form-control" id="{{exercise.id}}" placeholder="Enter time you spend on this exercise in minutes">
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
 
-<button class="create-post" type="submit" value="Submit">
-  Submit
-</button>
+  <button class="track-activity" type="submit" value="Submit">
+    Submit
+  </button>
+</form>
 
 
 {{!-- need a submit event handler --}}
+<script src="./js/trackActivity.js"></script>

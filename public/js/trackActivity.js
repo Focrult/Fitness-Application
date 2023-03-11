@@ -1,58 +1,37 @@
-// document.querySelector('.track-activity')
-// .addEventListener('submit', trackActivity);
-
 const trackActivityHandler = async (event) => {
     event.preventDefault();
+
+    const allInputs = document.getElementById('exercise_form').getElementsByTagName('input')
+
+    let postData = [];
+
+    for(let i = 0; i < allInputs.length; i++) {
+      if(allInputs[i].value) {
+        postData.push({
+          exerciseId: allInputs[i].getAttribute('id'),
+          exerciseTime: allInputs[i].value
+        })
+      }
+    }
   
-    const title = document.querySelector('#post-title').value.trim();
-    const contents = document.querySelector('#post-content').value.trim();
- 
-    if (title && contents) {
-      const response = await fetch(`/api/post`, {
+    if (postData.length !== 0) {
+      const response = await fetch(`/api/workout/exercise`, {
         method: 'POST',
-        body: JSON.stringify({ title, contents }),
+        body: JSON.stringify(postData),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.replace('/homepage');
+        document.location.replace('/workout');
       } else {
-        alert('Failed to create post');
+        alert('Failed to track activity');
       }
     }
   };
   
   document
-    .querySelector('.new-post-form')
-    .addEventListener('submit', trackActivity);
-    
-//example
-// const newFormHandler = async (event) => {
-//     event.preventDefault();
-  
-//     const exerciseName = document.querySelector('#exercise-name').value.trim();
-//     const exerciseTime = document.querySelector('#exercise_time').value.trim();
- 
-//     if (exerciseName && exerciseTime) {
-//       const response = await fetch(`/api/exercise`, {
-//         method: 'POST',
-//         body: JSON.stringify({ exerciseName, exerciseTime }),
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//       });
-  
-//       if (response.ok) {
-//         document.location.replace('/workout');
-//       } else {
-//         alert('Failed to track activity');
-//       }
-//     }
-//   };
-  
-//   document
-//     .querySelector('.track-exercise-form')
-//     .addEventListener('submit', newFormHandler);
+    .getElementById('exercise_form')
+    .addEventListener('submit', trackActivityHandler);
 
