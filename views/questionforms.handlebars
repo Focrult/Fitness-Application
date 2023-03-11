@@ -1,0 +1,95 @@
+<form id="fitness-form">
+   {{#each questions as |question|}}
+    {{#if (ifEquals question.type "number")}}
+      <div class="col-md-6 mb-3">
+        <label for="{{question.name}}" class="form-label">{{question.question}}</label>
+        <input type="number" name="{{question.name}}" class="form-control" id="{{question.name}}" >
+      </div>
+    {{else}}
+      <p>{{question.question}}</p>
+      {{#each question.options as |option|}}
+        <input type="radio" id="option_{{option.value}}" name="{{question.name}}" value="{{option.value}}">
+        <label for="html">{{option.label}}</label><br>
+      {{/each}}
+    {{/if}}
+  {{/each}}
+
+  {{!-- {{#each questions}}
+  {{#if (or (eq name "gender") (eq name "height") (eq name "weight"))}}
+  <div class="form-group">
+    <label for="{{name}}">{{question}}</label>
+    {{#if (eq type "radio")}}
+    {{#each options}}
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="{{name}}" id="{{value}}" value="{{value}}"{{#if required}} required{{/if}}>
+      <label class="form-check-label" for="{{value}}">{{label}}</label>
+    </div>
+    {{/each}}
+    {{else}}
+    <input class="form-control" type="{{type}}" id="{{name}}" name="{{name}}" placeholder="{{placeholder}}"{{#if required}} required{{/if}}>
+    {{/if}}
+  </div>
+  {{/if}}
+  {{/each}} --}}
+  <button id="submit-btn" type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+  {{!-- <div class="mb-3 form form-group">
+    <label for="weight"  class="form-label">What is your current weight in kilograms?</label>
+    <input type="number" class="form-control form-input" id="weight" />
+  </div>      
+  <div class="mb-3 form form-group">
+    <label for="height" class="form-label">What is your current height in centimeters?</label>
+    <input type="number" class="form-control form-input" id="height">
+  </div>
+  <div class="mb-3 form form-group">
+    <label for="password-signup" class="form-label">What is your gender?</label>
+    <input type="password" class="form-control form-input" id="password-signup">
+  </div>
+  <div class="form-group">
+    <a href="/questionforms">
+      <button type="submit" class="btn btn-primary">Sign up</button>
+    </a> 
+  </div>
+</form> --}}
+
+<script src="./js/question.js"></script>
+
+<script>
+  const form = document.getElementById("fitness-form");
+  const submitBtn = document.getElementById("submit-btn");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // prevent the form from submitting normally
+
+    // create an object to store the form data
+    const formData = {};
+    const elements = e.target.elements;
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+      if (element.type == "number") {
+        formData[element.name] = element.value;
+      } else if (element.type == "radio" && element.checked){
+        formData[element.name] = element.value;
+      }
+    }
+
+    // save the form data in local storage
+    //localStorage.setItem("formData", JSON.stringify(formData));
+
+    // redirect to the workout page
+    //window.location.href = "./views/workout.handlebars";
+
+    const response = await fetch('/api/form/question', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/account');
+    } else {
+      alert(response.statusText);
+    }
+  });
+</script>
