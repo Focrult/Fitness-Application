@@ -34,9 +34,23 @@ The fitness tracker app is an easy-to-use tool for my fitness journey. It's secu
 
 ## Installation
 
+- In your command line interface (Git Bash), navigate to the application directory and run the following commands:
+
+  ```md
+  > npm install
+  > mysql -u root
+  > SOURCE db/db.sql;
+  > EXIT
+  > npm start OR node.js
+  ```
+
 ## Usage
 
+- Upon complete of installation, you could use this application with node.js on your local server.
+
 ## Contribution
+
+- This application could contribute (provide) all fitness & health service for anybody on that journey.
 
 ## Links
 
@@ -44,4 +58,8 @@ The fitness tracker app is an easy-to-use tool for my fitness journey. It's secu
 
 - [The URL of GitHub Repository](https://github.com/Focrult/Fitness-Application)
 
+- [Webe page appearance](./Assets/Front%20Page.png)
+
 ## License
+
+- Covered by Mozilla [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
