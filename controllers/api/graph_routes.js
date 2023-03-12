@@ -88,38 +88,31 @@ router.get('/trends', async (req, res) => {
   const startDate = moment().startOf('week').toDate();
   const endDate = moment().endOf('week').toDate();
   try {
-    const workoutData = await Workout.findAll({
-      where: { //Removed user_id
-        complete_date: {
-          [Op.between]: [startDate, endDate]
-        }
-      },
+    // Select from Exercise table to Workout table while joint table Workout_exercise
+    // This will group all workout_exercise by Exercise
+    const WorkoutExerciseData = await Exercise.findAll({
       include: [
         {
-          model: Exercise
+          model: Workout,
+          where: {
+            complete_date: {
+              [Op.between]: [startDate, endDate]
+            }
+          },
         },
       ],
     });
-    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+    const exercises = WorkoutExerciseData.map((exercise) => exercise.get({ plain: true }));
 
-    workouts.forEach(workout => {
-      workout.exercise_time = 0;
-      workout.exercises.forEach(exercise => {
-        workout.exercise_time += exercise.workout_exercise.exercise_time;
+     // For each exercise, we add all exercise time under workout_exercise object and store it on each exercise object for future use
+     exercises.forEach(exercise => {
+      exercise.total_exercise_time = 0;
+      exercise.workouts.forEach(workout => {
+        exercise.total_exercise_time += workout.workout_exercise.exercise_time;
       })
     });
-
-    const sortedWorkouts = workouts.sort((a, b) => b.exercise_time - a.exercise_time);
-
-    const trendingWorkouts = sortedWorkouts.slice(0, 3);
-
-    const response = trendingWorkouts.map(workout => ({
-      exercise_name: workout.exercises[0].exercise_name,
-      total_time: workout.exercise_time,
-      complete_date: workout.complete_date
-    }));
-
-    res.json(response);
+    const sortedExercises = exercises.sort((a, b) => b.total_exercise_time - a.total_exercise_time);
+    res.json(sortedExercises);
   } catch (err) {
     res.status(400).json(err);
   }
