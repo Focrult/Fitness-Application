@@ -58,9 +58,8 @@ The fitness tracker app is an easy-to-use tool for my fitness journey. It's secu
 
 - [The URL of GitHub Repository](https://github.com/Focrult/Fitness-Application)
 
-- [Webe page appearance](./Assets/Front%20Page.png)
-- [Background](./Assets/background.jpg)
+- [Page Background](./Assets/Page-Background.png)
 
 ## License
 
-- Covered by Mozilla [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+- Covered by ISC license [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
