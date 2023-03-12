@@ -19,8 +19,9 @@ const ChartData = async () => {
     popularWorkoutsList.innerHTML = '';
     data.forEach(workout => {
       const li = document.createElement('li');
-      li.textContent = `${workout.exercise_name} - ${workout.workouts} (${workout.count})`;
+      li.textContent = `${workout.exercise_name}`;
+      console.log(workout.exercise_name);
       popularWorkoutsList.appendChild(li);
     });
   }
-  // trendData(); Error - Review after chart completion
+  trendData(); 
