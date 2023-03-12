@@ -171,8 +171,8 @@ router.get('/questionforms', (req, res) => {
   ];
 
   res.render('questionforms', {
+    layout: "dashboard",
     title: 'Question Forms',
-    // Add any additional data to be passed to the view here
     questions: fitnessQuestions,
   });
 });
