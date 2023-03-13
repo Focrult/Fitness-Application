@@ -112,7 +112,9 @@ router.get('/trends', async (req, res) => {
       })
     });
     const sortedExercises = exercises.sort((a, b) => b.total_exercise_time - a.total_exercise_time);
-    res.json(sortedExercises);
+    const topThreeExercise=sortedExercises.slice(0,3)
+
+    res.json(topThreeExercise);
   } catch (err) {
     res.status(400).json(err);
   }
