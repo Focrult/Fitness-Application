@@ -66,7 +66,7 @@ router.get('/chart', withAuth, async (req, res) => {
       labels,
       datasets: [
         {
-          label: 'Exercises Completed',
+          label: 'Total exercises time of the day',
           data,
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
           borderColor: 'rgba(54, 162, 235, 1)',
