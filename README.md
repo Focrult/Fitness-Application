@@ -59,3 +59,7 @@ https://www.npmjs.com/package/chart.js?activeTab=readme
 ## License
 
 - Covered by ISC license [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+
+## User Story
+
+- As a fitness newbie I want a fitness tracker that has a trending workouts tab for inspiration, tracks progress accurately, and displays progress on a chart for easy tracking. The tracker should make it easy to input workout data and automatically calculate important metrics like time completed. The fitness tracker should also help users stay motivated and connected with other fitness enthusiasts in the community
