@@ -28,5 +28,4 @@ const exerciseData = [
 ];
 
 const seedExercise = () => Exercise.bulkCreate(exerciseData);
-
 module.exports = seedExercise;
