@@ -137,7 +137,7 @@ router.get('/exercise', withAuth, async(req, res) => {
 
 
 // GET route for the question forms page
-router.get('/questionforms', (req, res) => {
+router.get('/questionforms', withAuth, (req, res) => {
 
   const fitnessQuestions = [
     {
