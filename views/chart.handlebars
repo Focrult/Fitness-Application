@@ -8,7 +8,7 @@ h5{
 }
 
 #trendingList li {
-  background-color: #f7f7f7;
+    background-color: #f7f7f7;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
@@ -23,14 +23,14 @@ h5{
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <h5>Your Progress of the Week</h5>
-      <div>
-        <canvas id="myChart"></canvas>
-      </div>
+      <h5>Your Progress this Week</h5>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
     </div>
     <div class="col-md-4 justify-center">
       <div class="card">
-        <div class="card-header underline text-center">Top 3 Workouts of the Week!</div>
+        <div class="card-header underline text-center">Top 3 Workouts this Week!</div>
         <div class="card-body">
     <ul id="trendingList" class="text-center">
       {{#each trendingList}}
