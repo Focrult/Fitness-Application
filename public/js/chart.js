@@ -5,7 +5,31 @@ const ChartData = async () => {
     const myChart = new Chart(chart, {
       type: 'bar',
       data: data,
-      options: {}
+      options: {
+        scales: {
+          y: {
+            ticks: {
+              callback: function(value, index, ticks) {
+                return value + 'mins';
+              }
+            }
+          }
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+
+                if (label) {
+                  label += ': ' +context.formattedValue + ' mins';
+                }
+                return label;
+              }
+            }
+          }
+        }
+      }
     });
   };
   ChartData();

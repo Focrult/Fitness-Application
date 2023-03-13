@@ -66,7 +66,7 @@ router.get('/chart', withAuth, async (req, res) => {
       labels,
       datasets: [
         {
-          label: 'Exercises Completed',
+          label: 'Total exercises time of the day',
           data,
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
           borderColor: 'rgba(54, 162, 235, 1)',
@@ -112,7 +112,9 @@ router.get('/trends', async (req, res) => {
       })
     });
     const sortedExercises = exercises.sort((a, b) => b.total_exercise_time - a.total_exercise_time);
-    res.json(sortedExercises);
+    const topThreeExercise=sortedExercises.slice(0,3)
+
+    res.json(topThreeExercise);
   } catch (err) {
     res.status(400).json(err);
   }
