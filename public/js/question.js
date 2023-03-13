@@ -1,27 +1,30 @@
-// const fitnessQuestions = [
-//     {
-//       question: "What is your current weight in kilograms?",
-//       type: "number",
-//       name: "weight",
-//       placeholder: "Enter your weight in kilograms",
-//       required: true
-//     },
-//     {
-//       question: "What is your current height in centimeters?",
-//       type: "number",
-//       name: "height",
-//       placeholder: "Enter your height in centimeters",
-//       required: true
-//     },
-//     {
-//       question: "What is your gender?",
-//       type: "radio",
-//       name: "gender",
-//       options: [
-//         { value: "male", label: "Male" },
-//         { value: "female", label: "Female" },
-//         { value: "other", label: "Other" }
-//       ],
-//       required: true
-//     }
-//   ];
+const form = document.getElementById("fitness-form");
+const submitBtn = document.getElementById("submit-btn");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault(); // prevent the form from submitting normally
+
+  // create an object to store the form data
+  const formData = {};
+  const elements = e.target.elements;
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    if (element.type == "number") {
+      formData[element.name] = element.value;
+    } else if (element.type == "radio" && element.checked){
+      formData[element.name] = element.value;
+    }
+  }
+
+  const response = await fetch('/api/form/question', {
+    method: 'POST',
+    body: JSON.stringify(formData),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/account');
+  } else {
+    alert(response.statusText);
+  }
+});
