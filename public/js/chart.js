@@ -44,7 +44,6 @@ const ChartData = async () => {
     data.forEach(workout => {
       const li = document.createElement('li');
       li.textContent = `${workout.exercise_name}`;
-      console.log(workout.exercise_name);
       popularWorkoutsList.appendChild(li);
     });
   }
