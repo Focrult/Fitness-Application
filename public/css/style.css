@@ -1,10 +1,13 @@
 body {
-    background-image: url('../img/background.jpg');
-    background-size: 2000px;
+    background-image: url('../img/sampleVideo.mp4');
 }
 
 #header{
     margin:10px;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+    font-size: 60px;
 }
 
 #profile{
@@ -29,8 +32,7 @@ body {
 }
 
 nav{
-    background-image: url('../img/background.jpg');
-    padding-bottom: 30%;
+    background-image: url('../img/sampleVideo.mp4');
 }
 
 nav>a{
