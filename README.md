@@ -11,19 +11,15 @@ Given a fitness tracker application,
 When I visit the site
 Then I am prompted for either login or signup,
 When I click on the sign-up,
-Then I am prompted to enter my email, name and phone number
-When I click signup
-Then I am taken to the Dashboard where I must enter specific details + preferences - beginner, intermediate, advanced.
-When I finish entering the details
-Then I am given a customized 4 week and 12-week workout plan, graph showing my progress, recommended foods blog, workout trends, etc
+Then I am prompted to enter my email and pasword.
+When I finish entering the details,
+Then I could access the webpage.
 When I select navigation for workout plan,
 Then I am given a customized workout plan, with checkboxes for progress
 When I select navigation for the graph
-Then I shown a visual representation of my progress
-When I select navigation for foods,
-Then I shown a blog of recommended foods
+Then I shown a visual representation of my progress.
 When I select the navigation for workout trends,
-Then I am prompted for the top ten workout trends.
+Then I am prompted for the top workout trends.
 
 ## User Story
 
@@ -37,11 +33,11 @@ The fitness tracker app is an easy-to-use tool for my fitness journey. It's secu
 - In your command line interface (Git Bash), navigate to the application directory and run the following commands:
 
   ```md
-  > npm install
-  > mysql -u root
+  > npm start
+  > mysql -u root -p with your password
   > SOURCE db/db.sql;
   > EXIT
-  > npm start OR node.js
+  > node seeds/index.js
   ```
 
 ## Usage
