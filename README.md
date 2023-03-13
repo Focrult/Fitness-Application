@@ -1,60 +1,59 @@
-# Title: Fitness Tracker Application
+# Title: SwoleMate & BuffBae
 
 ## Description
 
-The fitness tracker application is an easy-to-use for the user's fitness journey.
-It's secure and compatible with various mobile devices.
-
-## Acceptance Creteria
-
-Given a fitness tracker application,
-When I visit the site
-Then I am prompted for either login or signup,
-When I click on the sign-up,
-Then I am prompted to enter my email and pasword.
-When I finish entering the details,
-Then I could access the webpage.
-When I select navigation for workout plan,
-Then I am given a customized workout plan, with checkboxes for progress
-When I select navigation for the graph
-Then I shown a visual representation of my progress.
-When I select the navigation for workout trends,
-Then I am prompted for the top workout trends.
-
-## User Story
-
-As a fitness newbie, I want to use a fitness tracker app to help me get started with my fitness journey.
-The app creates a personalized fitness plan and guides me through beginner-friendly workouts like yoga and cardio.
-I can track my progress and set reminders. The app provides feedback on my workouts, including the number of workouts, time spent exercising, and calories burned.
-The fitness tracker app is an easy-to-use tool for my fitness journey. It's secure and compatible with various mobile devices.
-
-## Installation
-
-- In your command line interface (Git Bash), navigate to the application directory and run the following commands:
-
-  ```md
-  > npm start
-  > mysql -u root -p with your password
-  > SOURCE db/db.sql;
-  > EXIT
-  > node seeds/index.js
-  ```
+The SwoleMate & BuffBae application is an easy-to-use fitness tracker for the users. It records your day-to-day physical activities. Providing a variety of visuals to display your progress. As well as the most popular workout trends on our site. It's secure and compatible with various mobile devices.
 
 ## Usage
 
-- Upon complete of installation, you could use this application with node.js on your local server.
+When you visit the site, you are given options either to login or sign up.
+
+When you click on the sign up,then you will prompted to enter your username, email and password. After you press the sign up button you will be direct to the question page to select your gender and enter your height and weight.
+
+When you finish entering the details and pressed submit button, then you could access the webpage. If you are existing user you can just enter email and password to log in, then you could access the webpage.
+
+When you select navigation for account, you will see your detail including your username, email, gender, height and weight. You can click the update profile button to update your gender, height and weight.
+
+When you select navigation for the workout. If you haven't track any activity, you will be presented with the message "Welcome to the SwoleMate & BuffBae! You haven't done any workout. Press track activity to start!". Otherwise, you will be presented with your past workout records. 
+
+When you press the track activity button, you will be presented with a list of exercise and options to enter times you spend on the exercise you did. Once you press submit button, you will be redirect to the workout page with all the workout record you have submitted.
+
+When you select the navigation for Matrix, then you will presented with a bar graph on the left showing your progress of the week. Starting from Sunday to saturday, showing your total exercises time on each day. On the right side there is a top 3 workouts of the week trends bar, which showing the top three exercise that all users spend most of their times. 
+
+The following image shows the application's usage, appearance and functionality:
+![alt text](/public/img/login-page.png)
+![alt text](/public/img/account-page.png)
+![alt text](/public/img/workout-page.png)
+![alt text](/public/img/matrix-page.png)
+
+## Installation
+Chart.js <br />
+Bootstrap <br />
+Mysql2 <br />
+Express <br />
+Handlebars <br />
+Moment <br />
+Express-session <br />
 
 ## Contribution
 
-- This application could contribute (provide) all fitness & health service for anybody on that journey.
+https://github.com/zhou7cathy
+
+https://github.com/Focrult
+
+https://github.com/Tesfa8186
+
+https://github.com/sammy8078
+
+## Credits
+
+https://www.npmjs.com/package/chart.js?activeTab=readme
 
 ## Links
 
 - [The URL of the functional deployed application]()
 
 - [The URL of GitHub Repository](https://github.com/Focrult/Fitness-Application)
-
-- [Page Background](./Assets/Page-Background.png)
 
 ## License
 
