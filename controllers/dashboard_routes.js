@@ -141,10 +141,14 @@ router.get('/questionforms', (req, res) => {
 
   const fitnessQuestions = [
     {
-      question: "What is your current weight in kilograms?",
-      type: "number",
-      name: "weight",
-      placeholder: "Enter your weight in kilograms",
+      question: "What is your gender?",
+      type: "radio",
+      name: "gender",
+      options: [
+        { value: "male", label: "Male" },
+        { value: "female", label: "Female" },
+        { value: "other", label: "Other" }
+      ],
       required: true
     },
     {
@@ -155,14 +159,10 @@ router.get('/questionforms', (req, res) => {
       required: true
     },
     {
-      question: "What is your gender?",
-      type: "radio",
-      name: "gender",
-      options: [
-        { value: "male", label: "Male" },
-        { value: "female", label: "Female" },
-        { value: "other", label: "Other" }
-      ],
+      question: "What is your current weight in kilograms?",
+      type: "number",
+      name: "weight",
+      placeholder: "Enter your weight in kilograms",
       required: true
     }
   ];
