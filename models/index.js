@@ -3,7 +3,7 @@ const Workout = require("./workout");
 const Exercise = require("./exercise");
 const WorkoutExercise = require("./workout_exercise");
 
-// Define associations
+// Define Associations
 Workout.belongsTo(User, {
   foreignKey: 'user_id',
 });
