@@ -8,8 +8,19 @@
     </div>
     {{/each}}
   </div>
-
-  <button class="track-activity" type="submit" value="Submit">
+  <style>
+      .btn-primary {
+        background-color: #3f3d56;
+        border-color: #3f3d56;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background-color: #1f548d;
+        border-color: #d6eaff;
+      }
+    </style>
+  <button class="track-activity btn btn-primary" type="submit" value="Submit">
     Submit
   </button>
 </form>
